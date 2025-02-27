@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Driver Voting App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .driver {
+            margin: 20px;
+        }
+        .votes {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vote for Your Favorite F1 Driver</h1>
+    <div class="driver">
+        <button onclick="vote('leclerc')">Vote for Charles Leclerc</button>
+        <div class="votes" id="leclerc-votes">Votes: 0</div>
+    </div>
+    <div class="driver">
+        <button onclick="vote('hamilton')">Vote for Lewis Hamilton</button>
+        <div class="votes" id="hamilton-votes">Votes: 0</div>
+    </div>
+    <div class="driver">
+        <button onclick="vote('verstappen')">Vote for Max Verstappen</button>
+        <div class="votes" id="verstappen-votes">Votes: 0</div>
+    </div>
+
+    <script>
+        // Initialize vote counts
+        let votes = {
+            leclerc: 0,
+            hamilton: 0,
+            verstappen: 0
+        };
+
+        // Function to handle voting
+        function vote(driver) {
+            votes[driver]++;
+            document.getElementById(`${driver}-votes`).innerText = `Votes: ${votes[driver]}`;
+        }
+    </script>
+</body>
+</html>
